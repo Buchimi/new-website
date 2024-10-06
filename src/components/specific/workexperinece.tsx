@@ -21,7 +21,7 @@ const WorkExperience = () => {
                 <FaGoogle className="h-4 w-4" />
                 <AlertTitle>Google Software Engineer intern</AlertTitle>
                 <AlertDescription className="flex justify-between">
-                    Hybrid, Mountain view, California
+                    Hybrid, Mountain View, California
 
                     <div>
                         May 2024 - Aug 2024
