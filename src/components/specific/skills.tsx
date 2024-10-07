@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button'
 import { useState } from "react"
-
+import { ArrowLeft } from "lucide-react"
 type keys =
     | "python"
     | "dart"
@@ -220,21 +220,15 @@ const statemap: Partial<Record<keys, StatemapValue>> = {
 };
 
 const SkillsCard = () => {
-    const [index, setIndex] = useState<String>("")
+    const [index, setIndex] = useState<keys | null>(null)
     return <Card className="w-full">
-        <CardHeader>
-            <CardTitle>Skills</CardTitle>
-            <CardDescription>Here is a snapshot of the languages and tooling I have experience with. The skills are clickable</CardDescription>
-        </CardHeader>
-
-        <SkillsSnapshot onClick={(somestr: keys) => {
-            if (index.length > 0) {
-                setIndex("")
+        {index == null ? <SkillsSnapshot onClick={(somestr: keys) => {
+            if (index != null) {
+                setIndex(null)
             } else {
                 setIndex(somestr)
             }
-        }} />
-        <SkillsExpanded />
+        }} /> : <SkillsExpanded skill={index} toggleout={() => setIndex(null)} />}
     </Card>
 }
 
@@ -244,43 +238,70 @@ type SnapshotProps = {
 const SkillsSnapshot = ({ onClick }: SnapshotProps) => {
 
     return <div>
+        <CardHeader>
+            <CardTitle>Skills</CardTitle>
+            <CardDescription>Here is a snapshot of the languages and tooling I have experience with. The skills are clickable</CardDescription>
+        </CardHeader>
         <CardContent>
             Languages
             <div className="flex space-x-2 flex-wrap">
-                <Button variant="outline">Python</Button>
-                <Button variant="outline">Dart / Flutter</Button>
-                <Button variant="outline">Java</Button>
-                <Button variant="outline">Javascript / Typescript</Button>
-                <Button variant="outline">Rust</Button>
-                <Button variant="outline">C++ / C </Button>
+                <Button variant="outline" onClick={() => onClick("python")}>Python</Button>
+                <Button variant="outline" onClick={() => onClick("dart")}>Dart / Flutter</Button>
+                <Button variant="outline" onClick={() => onClick("java")}>Java</Button>
+                <Button variant="outline" onClick={() => onClick("javascript")}>Javascript / Typescript</Button>
+                <Button variant="outline" disabled onClick={() => onClick("rust")}>Rust</Button>
+                <Button variant="outline" disabled onClick={() => onClick("c++")}>C++ </Button>
             </div>
         </CardContent>
         <CardContent>
             Tooling and Frameworks
             <div className="flex space-x-2 flex-wrap">
-                <Button variant="outline">Flutter</Button>
-                <Button variant="outline">Spring</Button>
-                <Button variant="outline">React</Button>
-                <Button variant="outline">Fast Api</Button>
-                <Button variant="outline">Linux</Button>
+                <Button variant="outline" onClick={() => onClick("flutter")}>Flutter</Button>
+                <Button variant="outline" onClick={() => onClick("spring")}>Spring</Button>
+                <Button variant="outline" onClick={() => onClick("react")}>React</Button>
+                <Button variant="outline" onClick={() => onClick("fastApi")}>Fast Api</Button>
+                <Button variant="outline" disabled onClick={() => onClick("linux")}>Linux</Button>
             </div>
         </CardContent>
         <CardContent>
             Proficiencies
             <div className="flex space-x-2 flex-wrap">
-                <Button variant="outline">Full stack development</Button>
-                <Button variant="outline">Backend development</Button>
-                <Button variant="outline">Frontend development</Button>
-                <Button variant="outline">Embedded systems development</Button>
-                <Button variant="outline">Mobile/app development</Button>
-                <Button variant="outline">Leetcode</Button>
+                <Button variant="outline" onClick={() => onClick("mobile")}>Mobile/app development</Button>
+                <Button variant="outline" disabled onClick={() => onClick("fullstack")}>Full stack development</Button>
+                <Button variant="outline" disabled onClick={() => onClick("backend")}>Backend development</Button>
+                <Button variant="outline" disabled onClick={() => onClick("frontend")}>Frontend development</Button>
+                <Button variant="outline" disabled onClick={() => onClick("embedded")}>Embedded systems development</Button>
+                {/* <Button variant="outline">Leetcode</Button> */}
             </div>
         </CardContent>
     </div>
 }
-const SkillsExpanded = () => {
-    return <CardContent>
+const SkillsExpanded = ({ skill, toggleout }: { skill: keys, toggleout: () => void }) => {
+    const informationBase = statemap[skill]!
+    return <div>
 
-    </CardContent>
+        <CardHeader>
+            <div className="flex flex-row">
+                <Button variant={"outline"} onClick={toggleout}> <ArrowLeft className="h-4 w-4" /> </Button>
+                <CardTitle className="self-center">
+                    {informationBase.title}
+                </CardTitle>
+            </div>
+            <CardDescription>
+                {informationBase.paragraph}
+            </CardDescription>
+        </CardHeader>
+        <CardContent>
+            I have used {informationBase.title.toLowerCase()} to
+            <ul>
+                {informationBase.usedthisto.map((val) => <li>
+                    - {val}
+                </li>
+                )}
+            </ul>
+        </CardContent>
+
+    </div>
+
 }
 export default SkillsCard
