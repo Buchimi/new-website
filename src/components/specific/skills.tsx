@@ -283,7 +283,7 @@ const SkillsExpanded = ({ skill, toggleout }: { skill: keys, toggleout: () => vo
         <CardHeader>
             <div className="flex flex-row">
                 <Button variant={"outline"} onClick={toggleout}> <ArrowLeft className="h-4 w-4" /> </Button>
-                <CardTitle className="self-center">
+                <CardTitle className="self-center ml-4 text-xl">
                     {informationBase.title}
                 </CardTitle>
             </div>

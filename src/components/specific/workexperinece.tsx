@@ -28,9 +28,9 @@ const WorkExperience = () => {
                     </div>
                 </AlertDescription>
                 <AlertDescription className="mt-2">
-                    <Badge variant="outline" className="mr-1" >Flutter</Badge>
-                    <Badge variant="outline" className="mr-1" >Java</Badge>
-                    <Badge variant="outline" className="mr-1" >Mobile</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Flutter</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Java</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Mobile</Badge>
                 </AlertDescription>
             </Alert>
             <Alert className="mb-2">
@@ -43,11 +43,11 @@ const WorkExperience = () => {
                     </div>
                 </AlertDescription>
                 <AlertDescription className="mt-2">
-                    <Badge variant="outline" className="mr-1" >React Native</Badge>
-                    <Badge variant="outline" className="mr-1" >Python</Badge>
-                    <Badge variant="outline" className="mr-1" >Mobile</Badge>
-                    <Badge variant="outline" className="mr-1">Backend</Badge>
-                    <Badge variant="outline" className="mr-1">FastApi</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >React Native</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Python</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Mobile</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1">Backend</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1">FastApi</Badge>
                 </AlertDescription>
             </Alert>
 
@@ -61,10 +61,10 @@ const WorkExperience = () => {
                     </div>
                 </AlertDescription>
                 <AlertDescription className="mt-2">
-                    <Badge variant="outline" className="mr-1" >React</Badge>
-                    <Badge variant="outline" className="mr-1" >Java</Badge>
-                    <Badge variant="outline" className="mr-1" >Spring</Badge>
-                    <Badge variant="outline" className="mr-1" >Full stack</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >React</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Java</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Spring</Badge>
+                    <Badge variant="outline" className="mr-1 mb-1" >Full stack</Badge>
                 </AlertDescription>
             </Alert>
 
