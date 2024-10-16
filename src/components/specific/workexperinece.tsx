@@ -2,12 +2,11 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Terminal, Monitor, Briefcase } from "lucide-react"
+import { Terminal, Briefcase } from "lucide-react"
 import { FaGoogle } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 const WorkExperience = () => {

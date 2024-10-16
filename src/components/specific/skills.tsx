@@ -3,7 +3,6 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -294,7 +293,7 @@ const SkillsExpanded = ({ skill, toggleout }: { skill: keys, toggleout: () => vo
         <CardContent>
             I have used {informationBase.title.toLowerCase()} to
             <ul>
-                {informationBase.usedthisto.map((val) => <li>
+                {informationBase.usedthisto.map((val, index) => <li key={index}>
                     - {val}
                 </li>
                 )}
