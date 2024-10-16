@@ -244,7 +244,7 @@ const SkillsSnapshot = ({ onClick }: SnapshotProps) => {
         </CardHeader>
         <CardContent>
             Languages
-            <div className="flex space-x-2 flex-wrap">
+            <div className="flex flex-wrap gap-2">
                 <Button variant="outline" onClick={() => onClick("python")}>Python</Button>
                 <Button variant="outline" onClick={() => onClick("dart")}>Dart / Flutter</Button>
                 <Button variant="outline" onClick={() => onClick("java")}>Java</Button>
@@ -255,7 +255,7 @@ const SkillsSnapshot = ({ onClick }: SnapshotProps) => {
         </CardContent>
         <CardContent>
             Tooling and Frameworks
-            <div className="flex space-x-2 flex-wrap">
+            <div className="flex gap-2 flex-wrap">
                 <Button variant="outline" onClick={() => onClick("flutter")}>Flutter</Button>
                 <Button variant="outline" onClick={() => onClick("spring")}>Spring</Button>
                 <Button variant="outline" onClick={() => onClick("react")}>React</Button>
@@ -265,7 +265,7 @@ const SkillsSnapshot = ({ onClick }: SnapshotProps) => {
         </CardContent>
         <CardContent>
             Proficiencies
-            <div className="flex space-x-2 flex-wrap">
+            <div className="flex gap-2 flex-wrap">
                 <Button variant="outline" onClick={() => onClick("mobile")}>Mobile/app development</Button>
                 <Button variant="outline" disabled onClick={() => onClick("fullstack")}>Full stack development</Button>
                 <Button variant="outline" disabled onClick={() => onClick("backend")}>Backend development</Button>

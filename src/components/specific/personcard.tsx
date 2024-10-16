@@ -35,7 +35,7 @@ const MyCard = () => {
                 <Badge variant="secondary" className="m-1">Java + Spring backend dev</Badge>
             </div>
         </CardContent>
-        <CardFooter className="flex flex-wrap justify-around">
+        <CardFooter className="flex flex-wrap justify-evenly gap-4">
             <Button className="mb-2" onClick={() => { window.location.href = "mailto:michael.buuchi@gmail.com" }}>
                 <Mail className="mr-2 h-4 w-4" /> Email me
             </Button>
