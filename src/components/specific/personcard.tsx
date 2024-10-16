@@ -44,7 +44,7 @@ const MyCard = () => {
                 Check out my github
             </Button>
             <Button className="mb-2" onClick={() => {
-                window.location.href = "https://www.buchi.dev"
+                window.location.href = "https://old.buchi.dev"
             }}>
                 <Link className="mr-2 h-4 w-4" />
                 Old site
